@@ -1,21 +1,17 @@
 //nyah muigui asiah joshua finesse div zahmir eric worked together
-//This is called an iife - Immidiately invoked function exporession
-//When you want to make asyncronous coide, you use async before function and await followed by fetch
+
 (async function() {
   let userID = 1
   const jsonPlaceholder_url = "https://jsonplaceholder.typicode.com/" //until ".com/"
-  //follow the same variable naming convention everytime (camel case)
+
   const response = await fetch(`${jsonPlaceholder_url}albums`)
   const result = await response.json()
-  // console.log(result) //Allows us to see the result information from the call in the console
-  // document.getElementById("response").innerHTML = JSON.stringify(result)
-  //THE DRY WAY- FANCY
+
   async function getDataFromJSON(route, id) {
     const apiResponse = await fetch(`${jsonPlaceholder_url}${route}/${id}`)
     const apiResult = await apiResponse.json()
     return apiResult
-    //Create a Button that when the button is clicked it shows the API information for the route that we choose
-    // document.getElementByID("apiResponse").innerHTML = JSON.stringify(result)
+
   }
   document.getElementById("makeAPICall").addEventListener("click", async () => { //with an anonomous function call (fat arrow notation)
     let user = (await getDataFromJSON("users", userID))
