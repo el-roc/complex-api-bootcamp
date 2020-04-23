@@ -14,4 +14,4 @@ https://eric-complexapi1.netlify.com/
 
 ### What I Learned
 
-How to add the functionality of an API onto an existing project
+How to add the functionality of an API onto an existing project.
